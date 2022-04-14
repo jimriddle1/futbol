@@ -9,4 +9,7 @@ class Team
     @stadium = row[:stadium]
     @link = row[:link]
   end
+
+  def best_season
+  end
 end
