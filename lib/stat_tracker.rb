@@ -1,4 +1,7 @@
 require 'csv'
+require_relative 'game'
+require_relative 'team'
+require_relative 'game_team'
 
 # game_data = CSV.open"./data/games.csv", headers: true, header_converters: :symbol
 
@@ -173,4 +176,3 @@ class StatTracker
   end
 
 end
-
