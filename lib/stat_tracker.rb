@@ -194,12 +194,4 @@ end
   def count_of_teams
       @teams.map {|team| team[:team_id]}.length
   end
-<<<<<<< HEAD
-=======
-
-  def teams_best_season
-    require "pry";binding.pry
-  end
-
->>>>>>> 75d08f7 (save files)
 end

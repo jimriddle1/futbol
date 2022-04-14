@@ -49,13 +49,13 @@ RSpec.describe StatTracker do
       game_teams: game_teams_path
     }
 
-   expected = {:team_id=>"1",
+    expected = {:team_id=>"1",
                :franchise_id=>"23",
                :team_name=>"Atlanta United",
                :abbreviation=>"ATL",
                :link=>"/api/v1/teams/1"}
 
-   stat_tracker = StatTracker.from_csv(locations)
+    stat_tracker = StatTracker.new(locations)
    expect(stat_tracker.team_info(1)).to eq(expected)
  end
 
@@ -280,7 +280,7 @@ RSpec.describe StatTracker do
     expect(stat_tracker.count_of_teams).to eq(32)
   end
 
-  it " " do 
+  it " " do
 
   end
 end
