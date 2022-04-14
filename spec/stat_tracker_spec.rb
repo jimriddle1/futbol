@@ -1,5 +1,6 @@
 require './lib/stat_tracker'
 require 'csv'
+require 'pry'
 
 RSpec.describe StatTracker do
 
@@ -69,8 +70,15 @@ RSpec.describe StatTracker do
                 :team_name=>"Atlanta United",
                 :abbreviation=>"ATL",
                 :link=>"/api/v1/teams/1"}
+                # require "pry";binding.pry
+                require "pry"; binding.pry
 
     expect(stat_tracker.team_info(1)).to eq(expected)
   end
 
+  it 'returns team`s highest winning percentage ' do
+
+    expect(stat_tracker.highest_win_percentage_team).to eq(expected)
+
+  end
 end
