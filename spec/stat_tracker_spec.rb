@@ -39,16 +39,25 @@ RSpec.describe StatTracker do
     expected = CSV.read "#{locations[:games]}", headers: true, header_converters: :symbol
     expect(stat_tracker.games).to eq(expected)
   end
-  
-  it 'can give us team info' do
-   stat_tracker = StatTracker.new(locations)
 
-   expected = {:team_id=>"1",
+  it 'can give us team info' do
+    game_path = './data/games_15_rows.csv'
+    team_path = './data/teams.csv'
+    game_teams_path = './data/games_teams_15_rows.csv'
+
+    locations = {
+      games: game_path,
+      teams: team_path,
+      game_teams: game_teams_path
+    }
+
+    expected = {:team_id=>"1",
                :franchise_id=>"23",
                :team_name=>"Atlanta United",
                :abbreviation=>"ATL",
                :link=>"/api/v1/teams/1"}
 
+    stat_tracker = StatTracker.new(locations)
    expect(stat_tracker.team_info(1)).to eq(expected)
  end
 
@@ -277,4 +286,3 @@ RSpec.describe StatTracker do
 
 
 end
-
