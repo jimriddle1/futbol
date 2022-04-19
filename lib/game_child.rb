@@ -1,0 +1,5 @@
+class GameChild
+
+  
+
+end

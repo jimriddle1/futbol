@@ -7,6 +7,7 @@ require_relative 'game_team'
 
 
 class StatTracker
+
   attr_reader :games, :teams, :game_teams
 
   def initialize(locations)
@@ -109,7 +110,7 @@ class StatTracker
           game_results[:game_data][:away_losses] += 1
         elsif game.hoa == "home" && game.result == "TIE"
           game_results[:game_data][:home_ties] += 1
-        elsif game.hoa == "away" && game.result == "TIE"
+        else game.hoa == "away" && game.result == "TIE"
           game_results[:game_data][:away_ties] += 1
         end
       end
