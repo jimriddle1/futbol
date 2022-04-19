@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-class GameChild
-
-  
-
-=======
 require './lib/futbol_csv_reader'
 
 class GameChild < CSVReader
@@ -118,5 +112,4 @@ class GameChild < CSVReader
 
     average = (all_goals / all_games).round(2)
   end
->>>>>>> 1319766726c806238171e6bbd28c02d1e13146ef
 end

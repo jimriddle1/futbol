@@ -6,12 +6,6 @@ require_relative 'seasons_child'
 require_relative 'teams_child'
 
 class StatTracker
-<<<<<<< HEAD
-
-  attr_reader :games, :teams, :game_teams
-
-=======
->>>>>>> 1319766726c806238171e6bbd28c02d1e13146ef
   def initialize(locations)
     @game_child = GameChild.new(locations)
     @league_child = LeagueChild.new(locations)
@@ -32,65 +26,7 @@ class StatTracker
   end
 
   def team_info(given_team_id)
-<<<<<<< HEAD
-    team = {}
-    @teams.each do |row|
-      if row.team_id == given_team_id
-        team[:team_id] = row.team_id
-        team[:franchise_id] = row.franchise_id
-        team[:team_name] = row.team_name
-        team[:abbreviation] = row.abbreviation
-        team[:link] = row.link
-      end
-    end
-    return team
-  end
-
-  def game_teams_by_season(season)
-    @game_teams.select do |row|
-      row.game_id.to_s[0..3] == season.to_s[0..3]
-    end
-  end
-
-  def game_teams_by_team(team_id)
-    @game_teams.select do |row|
-      row.team_id == team_id
-    end
-  end
-
-  def coaches_records(game_teams)
-    hash = Hash.new{|h,k| h[k] = [0,0,0.to_f] }
-    game_teams.each do |row|
-      if row.result == "WIN"
-        hash[row.head_coach][0] += 1
-      else
-        hash[row.head_coach][1] += 1
-      end
-    end
-    return hash
-  end
-
-  def win_tallies
-    game_results = Hash.new({:home_wins => 0, :home_losses => 0, :away_wins => 0, :away_losses => 0, :home_ties => 0, :away_ties => 0})
-      @game_teams.each do |game|
-        if game.hoa == "home" && game.result == "WIN"
-          game_results[:game_data][:home_wins] += 1
-        elsif game.hoa == "home" && game.result == "LOSS"
-          game_results[:game_data][:home_losses] += 1
-        elsif game.hoa == "away" && game.result == "WIN"
-          game_results[:game_data][:away_wins] += 1
-        elsif game.hoa == "away" && game.result == "LOSS"
-          game_results[:game_data][:away_losses] += 1
-        elsif game.hoa == "home" && game.result == "TIE"
-          game_results[:game_data][:home_ties] += 1
-        else game.hoa == "away" && game.result == "TIE"
-          game_results[:game_data][:away_ties] += 1
-        end
-      end
-      game_results
-=======
     @teams_child.team_info(given_team_id)
->>>>>>> 1319766726c806238171e6bbd28c02d1e13146ef
   end
 
   def percentage_home_wins
