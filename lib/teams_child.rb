@@ -9,12 +9,13 @@ class TeamsChild < CSVReader
   def team_info(given_team_id)
     team = {}
     @teams.each do |row|
-      if row.team_id == given_team_id
-        team[:team_id] = row.team_id
-        team[:franchise_id] = row.franchise_id
-        team[:team_name] = row.team_name
-        team[:abbreviation] = row.abbreviation
-        team[:link] = row.link
+      # require 'pry'; binding.pry
+      if row.team_id == given_team_id.to_i
+        team["team_id"] = row.team_id.to_s
+        team["franchise_id"] = row.franchise_id.to_s
+        team["team_name"] = row.team_name
+        team["abbreviation"] = row.abbreviation
+        team["link"] = row.link
       end
     end
     return team

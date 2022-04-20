@@ -26,4 +26,8 @@ RSpec.describe StatTracker do
   it 'exists' do
     expect(@stat_tracker).to be_an_instance_of(StatTracker)
   end
+
+  it 'can read from csv' do
+    
+  end
 end

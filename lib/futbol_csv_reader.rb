@@ -11,12 +11,11 @@
       @games = read_games(locations[:games])
       @teams = read_teams(locations[:teams])
       @game_teams = read_game_teams(locations[:game_teams])
-      # require 'pry'; binding.pry
     end
 
-    def self.from_csv(locations)
-      StatTracker.new(locations)
-    end
+    # def self.from_csv(locations)
+    #   StatTracker.new(locations)
+    # end
 
     def read_games(csv)
     games_arr = []
