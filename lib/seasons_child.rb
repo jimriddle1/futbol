@@ -90,12 +90,6 @@ class SeasonsChild < CSVReader
     end
   end
 
-  # def games_by_season(season)
-  #   @games.select do |row|
-  #     row.season == season
-  #   end
-  # end
-
   def coaches_records(game_teams)
     hash = Hash.new{|h,k| h[k] = [0,0,0.to_f] }
     game_teams.each do |row|

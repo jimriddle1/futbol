@@ -9,7 +9,6 @@ class TeamsChild < CSVReader
   def team_info(given_team_id)
     team = {}
     @teams.each do |row|
-      # require 'pry'; binding.pry
       if row.team_id == given_team_id.to_i
         team["team_id"] = row.team_id.to_s
         team["franchise_id"] = row.franchise_id.to_s

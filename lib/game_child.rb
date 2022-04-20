@@ -14,12 +14,6 @@ class GameChild < CSVReader
     @games.map {|game| game.away_goals + game.home_goals}.min
   end
 
-  # def games_by_season(season)
-  #   @games.select do |row|
-  #     row.season == season
-  #   end
-  # end
-
   def win_tallies
     game_results = Hash.new({:home_wins => 0, :home_losses => 0, :away_wins => 0, :away_losses => 0, :home_ties => 0, :away_ties => 0})
       @game_teams.each do |game|
