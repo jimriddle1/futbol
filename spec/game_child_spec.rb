@@ -42,7 +42,7 @@ RSpec.describe GameChild do
   end
 
   it 'can calculate percentage_visitor_wins' do
-    expect(@stat_tracker.percentage_away_wins).to eq(0.36)
+    expect(@stat_tracker.percentage_visitor_wins).to eq(0.36)
   end
 
   it 'can calculate percentage_ties' do
@@ -71,7 +71,7 @@ RSpec.describe GameChild do
       "20132014"=>1323,
       "20172018"=>1355
     }
-    expect(@stat_tracker.count_games_by_season).to eq(expected)
+    expect(@stat_tracker.count_of_games_by_season).to eq(expected)
   end
   #
   it 'calculates average goals per game' do

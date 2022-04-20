@@ -11,6 +11,4 @@ class Team
     # require 'pry'; binding.pry
   end
 
-  def best_season
-  end
 end

@@ -1,4 +1,3 @@
-require 'csv'
 require_relative 'futbol_csv_reader'
 require_relative 'game_child'
 require_relative 'league_child'
@@ -25,24 +24,20 @@ class StatTracker
     @game_child.lowest_total_score
   end
 
-  def team_info(given_team_id)
-    @teams_child.team_info(given_team_id)
-  end
-
   def percentage_home_wins
     @game_child.percentage_home_wins
   end
 
-  def percentage_away_wins
-    @game_child.percentage_away_wins
+  def percentage_visitor_wins
+    @game_child.percentage_visitor_wins
   end
 
   def percentage_ties
     @game_child.percentage_ties
   end
 
-  def count_games_by_season
-    @game_child.count_games_by_season
+  def count_of_games_by_season
+    @game_child.count_of_games_by_season
   end
 
   def average_goals_by_season
@@ -69,10 +64,6 @@ class StatTracker
     @seasons_child.least_accurate_team(season)
   end
 
-  def tackle_hash(season)
-    @seasons_child.tackle_hash(season)
-  end
-
   def most_tackles(season)
     @seasons_child.most_tackles(season)
   end
@@ -81,12 +72,12 @@ class StatTracker
     @seasons_child.fewest_tackles(season)
   end
 
-  def best_season(id)
-    @teams_child.best_season(id)
+  def team_info(id)
+    @teams_child.team_info(id)
   end
 
-  def win_percentage_by_team_id(id)
-    @teams_child.win_percentage_by_team_id(id)
+  def best_season(id)
+    @teams_child.best_season(id)
   end
 
   def worst_season(id)
@@ -103,10 +94,6 @@ class StatTracker
 
   def average_win_percentage(id)
     @teams_child.average_win_percentage(id)
-  end
-
-  def games_by_team(team_id)
-    @teams_child.games_by_team(team_id)
   end
 
   def favorite_opponent(id)

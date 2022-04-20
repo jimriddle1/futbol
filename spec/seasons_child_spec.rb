@@ -20,8 +20,8 @@ RSpec.describe SeasonsChild do
     }
 
     @stat_tracker = StatTracker.from_csv(locations)
-    @seasons_child = SeasonsChild.new(locations)
-    @csv_reader = CSVReader.new(locations)
+    # @seasons_child = SeasonsChild.new(locations)
+    # @csv_reader = CSVReader.new(locations)
   end
 
   it 'can give me the winningest coach given a specific season' do
@@ -67,14 +67,17 @@ RSpec.describe SeasonsChild do
     expect(@stat_tracker.least_accurate_team(20172018)).to eq("Toronto FC")
   end
 
-  it 'gives me the team with most and least tackles' do
+  it 'gives me the team with the most tackles' do
     expect(@stat_tracker.most_tackles(20142015)).to eq("Seattle Sounders FC")
+  end
+
+  it 'gives me the team with the fewest tackles' do
     expect(@stat_tracker.fewest_tackles(20142015)).to eq("Orlando City SC")
   end
 
-  it 'gives me a hash of shot percentages given a season' do
-    expect(@seasons_child.accuracy_hash(20172018)[28][2]).to eq(0.29614325068870523)
-  end
+  # it 'gives me a hash of shot percentages given a season' do
+  #   expect(@seasons_child.accuracy_hash(20172018)[28][2]).to eq(0.29614325068870523)
+  # end
 
   # it 'gives me an array of tackles given a season' do
   #   expect(@stat_tracker.tackle_hash(20172018)[28]).to eq(1690)
